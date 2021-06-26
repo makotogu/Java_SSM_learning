@@ -1,4 +1,4 @@
-package makoto.aop;
+package makoto.anno;
 
 public interface TargetInterface {
 
