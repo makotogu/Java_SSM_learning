@@ -2,8 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!--加载jdbc配置文件-->
     <context:property-placeholder location="classpath:jdbc.properties"/>
@@ -18,4 +20,26 @@
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
+
+    <!--目标对象-->
+    <bean id="target" class="makoto.aop.Target"></bean>
+    <!--切面对象-->
+    <bean id="myAspect" class="makoto.aop.MyAspect"></bean>
+    <!--配置织入：告诉spring框架 哪些方法（切点）需要进行哪些增强（前置、后置）-->
+    <aop:config>
+        <!--声明切面-->
+        <aop:aspect ref="myAspect">
+            <!--抽取切点表达式-->
+            <aop:pointcut id="myPoinctcut" expression="execution(* makoto.aop.*.*(..))"/>
+            <!--切面：切点+通知-->
+           <!-- <aop:before method="before" pointcut="execution(public void makoto.aop.Target.save())"/>-->
+            <aop:before method="before" pointcut="execution(* makoto.aop.*.*(..))"/>
+            <aop:after-returning method="afterReturning" pointcut="execution(* makoto.aop.*.*(..))"/>
+            <aop:around method="around" pointcut="execution(* makoto.aop.*.*(..))"/>
+            <aop:after-throwing method="afterThrowing" pointcut="execution(* makoto.aop.*.*(..))"/>
+            <!--<aop:after method="after" pointcut="execution(* makoto.aop.*.*(..))"/>-->
+            <aop:after method="after"  pointcut-ref="myPoinctcut"></aop:after>
+        </aop:aspect>
+    </aop:config>
+
 </beans>
