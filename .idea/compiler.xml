@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringIocAnno" />
+        <module name="SpringMVCException" />
+        <module name="SpringAop" />
+        <module name="SpringTest" />
+        <module name="SpringIoc" />
+        <module name="SpringInterceptor" />
+        <module name="SpringMvc" />
+        <module name="SpringJdbcTemplate" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11">
+      <module name="SpringAop" target="11" />
+      <module name="SpringInterceptor" target="11" />
+      <module name="SpringIoc" target="1.5" />
+      <module name="SpringIocAnno" target="11" />
+      <module name="SpringJdbcTemplate" target="11" />
+      <module name="SpringMvc" target="11" />
+      <module name="SpringMVCException" target="11" />
+      <module name="SpringTest" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/mvc  http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/context   http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--mvc注解注入-->
+    <mvc:annotation-driven/>
+    <!--配置视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--静态资源的访问权限开放-->
+    <mvc:default-servlet-handler/>
+
+    <!--组件扫描-->
+    <context:component-scan base-package="makoto.controller"/>
+
+    <!--配置简单的异常处理器-->
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        &lt;!&ndash;<property name="defaultErrorView" value="error"/>&ndash;&gt;
+        <property name="exceptionMappings">
+            <map>
+                <entry key="java.lang.ClassCastException" value="error1"></entry>
+                <entry key="makoto.exception.MyException" value="error2"></entry>
+            </map>
+        </property>
+    </bean>-->
+
+    <!--编写自定义的异常处理器-->
+    <bean class="makoto.resolver.MyExceptionResolver"/>
+</beans>

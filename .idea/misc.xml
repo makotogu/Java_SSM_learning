@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/SpringIoc" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/SpringIoc/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringIocAnno/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMvc/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringJdbcTemplate/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringTest/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringInterceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVCException/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringAop/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

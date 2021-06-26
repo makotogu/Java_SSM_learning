@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/mvc  http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/context   http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--mvc注解注入-->
+    <mvc:annotation-driven/>
+    <!--配置视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--静态资源的访问权限开放-->
+    <mvc:default-servlet-handler/>
+
+    <!--组件扫描-->
+    <context:component-scan base-package="makoto.controller"/>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--配置对哪些支援执行拦截-->
+            <mvc:mapping path="/**"/>
+            <!--那些资源排除拦截-->
+            <mvc:exclude-mapping path="/user/login"/>
+            <bean class="makoto.interceptor.PrivilegeInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+</beans>

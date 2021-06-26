@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework:spring-context:5.2.15.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../JavaWeb/apache-maven-3.8.1-bin/apache-maven-3.8.1/mvn_repository/org/springframework/spring-context/5.2.15.RELEASE/spring-context-5.2.15.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../JavaWeb/apache-maven-3.8.1-bin/apache-maven-3.8.1/mvn_repository/org/springframework/spring-context/5.2.15.RELEASE/spring-context-5.2.15.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../JavaWeb/apache-maven-3.8.1-bin/apache-maven-3.8.1/mvn_repository/org/springframework/spring-context/5.2.15.RELEASE/spring-context-5.2.15.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
