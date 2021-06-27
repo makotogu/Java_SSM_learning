@@ -36,3 +36,40 @@
 5. 编写核心文件SqlMapConfig.xml
 6. 编写测试类
 
+# Mybatis的映射文件概述
+
+```xml
+<!--映射文件DTD约束头-->
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="userMapper">
+
+    <select id="findAll" resultType="makoto.domain.User">
+        select * from user
+    </select>
+
+</mapper>
+```
+
+# Mybatis的增删查改操作
+
+### 插入操作注意问题
+
+* 插入语句使用insert标签
+* 在映射文件中使用parameterType属性指定要插入的数据类型
+* Sql语句中使用#{实体属性名}方式引用实体中的属性值
+* 插入操作使用的API是sqlSession.insert(“命名空间.id”，实体对象)；
+* 插入操作涉及数据库数据变化，所以要使用sqlSession对象显示的提交事务即sqlSession.commit()
+
+### 修改操作注意问题
+
+* 修改语句使用update标签
+* 修改操作使用的API是sqlSession.update("命名空间.id"，实体对象);
+
+### 删除操作注意问题
+
+* 删除语句使用delete标签
+* Sql语句中使用#{任意字符串}方式引用传递的单个参数
+* 删除操作使用的是API是sqlSession.delete("命名空间.id"，Object)；
+
