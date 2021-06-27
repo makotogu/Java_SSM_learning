@@ -14,6 +14,8 @@
         <module name="SpringInterceptor" />
         <module name="SpringMvc" />
         <module name="SpringJdbcTemplate" />
+        <module name="SpringTX" />
+        <module name="SpringTxAnno" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
@@ -25,6 +27,8 @@
       <module name="SpringMvc" target="11" />
       <module name="SpringMVCException" target="11" />
       <module name="SpringTest" target="11" />
+      <module name="SpringTX" target="11" />
+      <module name="SpringTxAnno" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

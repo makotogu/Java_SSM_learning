@@ -9,7 +9,9 @@
       <module fileurl="file://$PROJECT_DIR$/SpringJdbcTemplate/SpringJdbcTemplate.iml" filepath="$PROJECT_DIR$/SpringJdbcTemplate/SpringJdbcTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVCException/SpringMVCException.iml" filepath="$PROJECT_DIR$/SpringMVCException/SpringMVCException.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMvc/SpringMvc.iml" filepath="$PROJECT_DIR$/SpringMvc/SpringMvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringTX/SpringTX.iml" filepath="$PROJECT_DIR$/SpringTX/SpringTX.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringTest/SpringTest.iml" filepath="$PROJECT_DIR$/SpringTest/SpringTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringTxAnno/SpringTxAnno.iml" filepath="$PROJECT_DIR$/SpringTxAnno/SpringTxAnno.iml" />
     </modules>
   </component>
 </project>
