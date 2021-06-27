@@ -12,6 +12,7 @@
         <module name="SpringTest" />
         <module name="SpringIoc" />
         <module name="SpringInterceptor" />
+        <module name="MybatisQuick" />
         <module name="SpringMvc" />
         <module name="SpringJdbcTemplate" />
         <module name="SpringTX" />
@@ -19,6 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
+      <module name="MybatisQuick" target="11" />
       <module name="SpringAop" target="11" />
       <module name="SpringInterceptor" target="11" />
       <module name="SpringIoc" target="1.5" />
