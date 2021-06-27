@@ -54,7 +54,7 @@
 
 # Mybatis的增删查改操作
 
-### 插入操作注意问题
+## 插入操作注意问题
 
 * 插入语句使用insert标签
 * 在映射文件中使用parameterType属性指定要插入的数据类型
@@ -62,14 +62,76 @@
 * 插入操作使用的API是sqlSession.insert(“命名空间.id”，实体对象)；
 * 插入操作涉及数据库数据变化，所以要使用sqlSession对象显示的提交事务即sqlSession.commit()
 
-### 修改操作注意问题
+## 修改操作注意问题
 
 * 修改语句使用update标签
 * 修改操作使用的API是sqlSession.update("命名空间.id"，实体对象);
 
-### 删除操作注意问题
+## 删除操作注意问题
 
 * 删除语句使用delete标签
 * Sql语句中使用#{任意字符串}方式引用传递的单个参数
 * 删除操作使用的是API是sqlSession.delete("命名空间.id"，Object)；
 
+# Mybatis核心配置文件概述
+
+``` xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--数据源环境-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--加载映射文件-->
+    <mappers>
+        <mapper resource="makoto/mapper/UserMapper.xml"></mapper>
+    </mappers>
+</configuration>
+```
+
+## MyBatis常用配置解析
+
+### environments标签
+
+* 其中事务管理器(transactionManager)类型有两种
+  * JDBC: 这个配置就是直接使用了JDBC的提交和回滚设置，它依赖于从数据源的到的连接来管理事务作用域
+  * MANAGED: 这个配置几乎没做什么。它从来不提交或回滚一个连接，而是让容器来管理事务的整个生命周期（比如JEE应用服务器的上下文。）默认情况下它会关闭连接，然而一些容器并不希望这样，因此需要将closeConnection属性设置为false来阻止它默认的关闭行为
+* 其中，数据源(dataSource)类型有三种
+  * UNPOOLED: 这个数据源的实现知识每次被请求时打开和关闭连接
+  * POOLED: 这种数据源利用“池”的概念将JDBC连接对象组织起来
+  * JNDI: 这个数据源的实现是为了能在如EJB或应用服务器这类容器中，容器可以集中或在外部配置数据源，然后放置一个JNDI上下文的引用
+
+### mappers标签
+
+* 该标签的作用是加载映射的，加载方式有如下几种
+  * 使用相对类路径的资源引用，例如：\<mapper resource="org/mybatis/builder/AuthorMapper.xml"/>
+  * 使用完全限定资源定位符（URL），例如：\<mapper url="file:///var/mappers/AuthorMapper.xml"/>
+  * 使用映射器接口实现类的完全限定类名，例如：\<mapper class="org.mybatis.builder.AuthorMapper"/>
+  * 将包内的映射器接口实现全部注册为映射器，例如：\<package name="org.mybatis.builder"/>
+
+### properties标签
+
+* 实际开发中，习惯将数据源的配置信息单独抽取为一个properties文件，改标签可以加载额外的properties文件
+
+### typeAliases标签
+
+* 类别别名是为Java类型设置一个短的名字，配置typeAliases，为makoto.domain.User定义别名为user
+
+  ``` xml
+  <typeAliases>
+      <typeAlias type="makoto.domain.User" alias="user"></typeAlias>
+  </typeAliases>
+  ```
+
+  
