@@ -9,6 +9,7 @@
         <module name="SpringIocAnno" />
         <module name="SpringMVCException" />
         <module name="SpringAop" />
+        <module name="MybatisDao" />
         <module name="SpringTest" />
         <module name="SpringIoc" />
         <module name="SpringInterceptor" />
@@ -20,6 +21,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
+      <module name="MybatisDao" target="11" />
       <module name="MybatisQuick" target="11" />
       <module name="SpringAop" target="11" />
       <module name="SpringInterceptor" target="11" />
