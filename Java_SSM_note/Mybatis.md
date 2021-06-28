@@ -134,4 +134,28 @@
   </typeAliases>
   ```
 
-  
+
+## Mybatis 相应API
+
+### sqlSession工厂构建器SqlSessionFactoryBuilder
+
+* 常用API：SqlSessionFactory build(InputStream inputStream)
+
+* 通过加载mybatis的核心文件的输入流的形式构建一个SqlSessionFactory对象
+
+  ```java
+  String resources = "org/mybatis/builder/mybatis-config.xml";
+  InputStream inputStream = Resources.getResourcesAsStream(resource);
+  SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+  SqlSessionFactory factory = builder.build(inputStream);
+  ```
+
+### SqlSession工厂对象SqlSwssionFactory
+
+* 常用的方法有：
+  * openSession():会默认开启一个事务，但事务不会自动提交，也就是意味着需要手动进行事务提交，更新操作数据才会持久化到数据库中。
+  * openSession(boolean autoCommit):参数为是否自动提交，如果设置为true，那么不需要手动提交事务。
+
+### SqlSession会话对象
+
+* SqlSession实例在Mybatis中是一个非常强大的类，在这里会看到所有的执行语句。提交或回滚事务和获取映射器实例方法。
