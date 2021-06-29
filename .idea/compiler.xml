@@ -18,12 +18,14 @@
         <module name="SpringAop" />
         <module name="MybatisDao" />
         <module name="SpringIoc" />
+        <module name="MybatisAnno" />
         <module name="MybatisConfig" />
         <module name="MybatisMulti" />
         <module name="SpringTxAnno" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
+      <module name="MybatisAnno" target="11" />
       <module name="MybatisConfig" target="11" />
       <module name="MybatisDao" target="11" />
       <module name="MybatisMapper" target="11" />
