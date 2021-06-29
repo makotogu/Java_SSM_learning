@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: commons-io:commons-io:2.3">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../JavaWeb/apache-maven-3.8.1-bin/apache-maven-3.8.1/mvn_repository/commons-io/commons-io/2.3/commons-io-2.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.3/commons-io-2.3.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../JavaWeb/apache-maven-3.8.1-bin/apache-maven-3.8.1/mvn_repository/commons-io/commons-io/2.3/commons-io-2.3-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.3/commons-io-2.3-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../JavaWeb/apache-maven-3.8.1-bin/apache-maven-3.8.1/mvn_repository/commons-io/commons-io/2.3/commons-io-2.3-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.3/commons-io-2.3-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
