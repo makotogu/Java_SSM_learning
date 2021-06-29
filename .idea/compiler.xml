@@ -6,22 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SpringIocAnno" />
-        <module name="SpringMVCException" />
-        <module name="SpringAop" />
-        <module name="MybatisDao" />
         <module name="SpringTest" />
-        <module name="SpringIoc" />
         <module name="SpringInterceptor" />
         <module name="MybatisQuick" />
         <module name="SpringMvc" />
         <module name="SpringJdbcTemplate" />
         <module name="SpringTX" />
+        <module name="MybatisMapper" />
+        <module name="SpringIocAnno" />
+        <module name="SpringMVCException" />
+        <module name="SpringAop" />
+        <module name="MybatisDao" />
+        <module name="SpringIoc" />
+        <module name="MybatisConfig" />
         <module name="SpringTxAnno" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
+      <module name="MybatisConfig" target="11" />
       <module name="MybatisDao" target="11" />
+      <module name="MybatisMapper" target="11" />
       <module name="MybatisQuick" target="11" />
       <module name="SpringAop" target="11" />
       <module name="SpringInterceptor" target="11" />
