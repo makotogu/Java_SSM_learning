@@ -21,6 +21,7 @@
         <option value="$PROJECT_DIR$/MybatisDao/pom.xml" />
         <option value="$PROJECT_DIR$/MybatisMapper/pom.xml" />
         <option value="$PROJECT_DIR$/MybatisConfig/pom.xml" />
+        <option value="$PROJECT_DIR$/MybatisMulti/pom.xml" />
       </list>
     </option>
   </component>
